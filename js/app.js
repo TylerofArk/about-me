@@ -99,7 +99,7 @@ while (userGuess !== myNum) {
 }
 
 if (userGuess === myNum) {
-	score++;
+  score++;
 }
 
 const cameras = ['nikon', 'canon', 'sony', 'fuji', 'panasonic', 'pentax', 'leica'];
@@ -124,7 +124,7 @@ while (userGuess2 !== myCam) {
 }
 
 if (userGuess2 === myCam) {
-	score++;
+  score++;
 }
 
 alert(`You scored a ${score} out of 7`);
