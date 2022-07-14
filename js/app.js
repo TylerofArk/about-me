@@ -1,6 +1,7 @@
 'use strict';
 
 let siteVisitor = prompt('What is your name?');
+let score = 0;
 
 alert(`Howdy, ${siteVisitor}?! Thanks for stopping by. I have a quiz for you about me! Answer each of the following yes or no questions to get to know me a little better.`);
 
@@ -14,6 +15,10 @@ if (questionOne === 'y' || questionOne === 'yes') {
   alert('Answer yes or no');
 }
 
+if (questionOne === 'y' || questionOne === 'yes') {
+  score++;
+}
+
 let questionTwo = prompt('Is my favorite food pizza?').toLowerCase();
 
 if (questionTwo === 'y' || questionTwo === 'yes') {
@@ -22,6 +27,10 @@ if (questionTwo === 'y' || questionTwo === 'yes') {
   alert('You are wrong. I love pizza!');
 } else {
   alert('Answer yes or no');
+}
+
+if (questionTwo === 'y' || questionTwo === 'yes') {
+  score++;
 }
 
 let questionThree = prompt('Have I traveled abroad?').toLowerCase();
@@ -34,6 +43,10 @@ if (questionThree === 'y' || questionThree === 'yes') {
   alert('Answer yes or no');
 }
 
+if (questionThree === 'y' || questionThree === 'yes') {
+  score++;
+}
+
 let questionFour = prompt('Is summer my favorite season?').toLowerCase();
 
 if (questionFour === 'y' || questionFour === 'yes') {
@@ -44,6 +57,10 @@ if (questionFour === 'y' || questionFour === 'yes') {
   alert('Answer yes or no');
 }
 
+if (questionFour === 'y' || questionFour === 'yes') {
+  score++;
+}
+
 let questionFive = prompt('Is my favorite color orange?').toLowerCase();
 
 if (questionFive === 'y' || questionFive === 'yes') {
@@ -52,6 +69,10 @@ if (questionFive === 'y' || questionFive === 'yes') {
   alert('Right! My favorite color is blue.');
 } else {
   alert('Answer yes or no');
+}
+
+if (questionFive === 'y' || questionFive === 'yes') {
+  score++;
 }
 
 const question = 'Guess what number I am thinking of?';
@@ -65,7 +86,6 @@ while (userGuess !== myNum) {
     break;
   }
   attempts--;
-  userGuess = parseInt(prompt(question));
   if (userGuess === myNum) {
     alert('Congratulations, you are correct!');
   }
@@ -75,13 +95,36 @@ while (userGuess !== myNum) {
   if (userGuess > myNum) {
     alert('Guess lower');
   }
+  userGuess = parseInt(prompt(question));
 }
 
+if (userGuess === myNum) {
+	score++;
+}
+
+const cameras = ['nikon', 'canon', 'sony', 'fuji', 'panasonic', 'pentax', 'leica'];
 const camQuestion = (`What brand of camera do I use? Options:${cameras}`);
 let guesses = 6;
-let myCam = sony;
-let userGuess2 = prompt(camQuestion);
-const cameras = ['nikon', 'canon', 'sony', 'fuji', 'panasonic', 'pentax', 'leica'];
+let myCam = 'sony';
+let userGuess2 = prompt(camQuestion).toLowerCase();
 
-console.log(cameras);
+while (userGuess2 !== myCam) {
+  if (guesses === 0) {
+    alert('Sorry, you are out of attempts.');
+    break;
+  }
+  guesses--;
+  if (userGuess2 === myCam){
+    alert('Congratulations, you are correct!');
+  }
+  if(userGuess2 !== myCam){
+    alert('Try again!');
+  }
+  userGuess2 = prompt(camQuestion).toLowerCase();
+}
 
+if (userGuess2 === myCam) {
+	score++;
+}
+
+alert(`You scored a ${score} out of 7`);
