@@ -82,7 +82,7 @@ let userGuess = parseInt(prompt(question));
 
 while (userGuess !== myNum) {
   if (attempts === 0) {
-    alert('Sorry, you are out of attempts.');
+    alert('Sorry, you are out of attempts. My number was 6.');
     break;
   }
   attempts--;

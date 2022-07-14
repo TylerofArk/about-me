@@ -33,6 +33,11 @@ p {
 	padding: 1em
 }
 
+ol {
+	list-style-type: square;
+	list-style-position: inside;
+}
+
 li {
 	font-size: 2vw;
 	margin: auto;
